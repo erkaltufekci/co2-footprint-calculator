@@ -7,15 +7,15 @@ class User {
   consumeCO2(action) {
     switch (action) {
       case "driving car":
-        this.limit = -50;
+        this.limit -= 50;
         console.log(`This is your actual limit ${this.limit}`);
         break;
       case "ride a bike":
-        this.limit = -1;
+        this.limit -= 1;
         console.log(`This is your actual limit ${this.limit}`);
         break;
       case "get a train":
-        this.limit = -10;
+        this.limit -= 10;
         console.log(`This is your actual limit ${this.limit}`);
         break;
     }
