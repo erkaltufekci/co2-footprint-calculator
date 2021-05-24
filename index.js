@@ -3,6 +3,7 @@ class User {
     this.name = name;
     this.email = email;
     this.limit = 100;
+    this.comment = [];
   }
   consumeCO2(action) {
     switch (action) {
