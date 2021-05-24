@@ -5,6 +5,7 @@ class User {
     this.limit = 100;
     this.comment = [];
   }
+
   consumeCO2(action) {
     switch (action) {
       case "driving car":
@@ -29,4 +30,5 @@ class User {
 }
 const ahmet = new User("ahmet", "ahmet@ahmet.de");
 ahmet.consumeCO2("driving car");
-console.log(ahmet);
+ahmet.commentAdd("mehmet", "hello");
+console.log(ahmet.comment);
