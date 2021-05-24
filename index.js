@@ -21,6 +21,11 @@ class User {
         break;
     }
   }
+
+  commentAdd(person, text) {
+    this.comment.push(text);
+    console.log(`${person} made ${this.comment.length} times`);
+  }
 }
 const ahmet = new User("ahmet", "ahmet@ahmet.de");
 ahmet.consumeCO2("driving car");
