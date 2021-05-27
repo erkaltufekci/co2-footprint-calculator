@@ -10,4 +10,4 @@ serhat.footPrintCalc(10);
 
 console.log(car.carEmission);
 
-console.log(serhat.footPrintCalc());
+console.log(serhat.footPrintCalc(car.carEmission));
