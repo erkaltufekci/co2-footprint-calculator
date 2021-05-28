@@ -1,13 +1,13 @@
-const Emission = require("./emission");
+const Emission = require('./emission');
 class User {
   constructor(name, email) {
     this.name = name;
     this.email = email;
     this.target = 1000;
     this.dailyTravel = {
-      bikeDistance: "",
-      trainDistance: "",
-      carDistance: "",
+      bikeDistance: '',
+      trainDistance: '',
+      carDistance: '',
     };
   }
 

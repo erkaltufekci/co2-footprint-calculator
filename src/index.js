@@ -1,8 +1,6 @@
-const User = require("./user");
-const Mobility = require("./mobility");
+const User = require('./user');
 
-const ahmet = new User("ahmet", "ahmet@ahmet.de");
-const serhat = new User("Serhat", "serhat@serhat.de");
+const serhat = new User('Serhat', 'serhat@serhat.de');
 
 serhat.driveCar(30);
 serhat.getOnTrain(10);
