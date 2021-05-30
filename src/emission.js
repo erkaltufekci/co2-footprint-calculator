@@ -1,7 +1,7 @@
 class Emission {
-  carEmissionCoefficient = 100;
-  trainEmissionCoefficient = 40;
-  bikeEmissionCoefficient = 5;
+  static carEmissionCoefficient = 100;
+  static trainEmissionCoefficient = 40;
+  static bikeEmissionCoefficient = 5;
 
   constructor(dailyTravel) {
     this.carDistance = dailyTravel.carDistance;
@@ -21,9 +21,9 @@ class Emission {
 
   calculateDailyTotalEmission() {
     return {
-      "bike emission": this.calculateBikeEmission(),
-      "train emission": this.calculateTrainEmission(),
-      "car emission": this.calculateCarEmission(),
+      'bike emission': this.calculateBikeEmission(),
+      'train emission': this.calculateTrainEmission(),
+      'car emission': this.calculateCarEmission(),
     };
   }
 }
