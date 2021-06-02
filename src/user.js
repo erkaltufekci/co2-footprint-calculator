@@ -9,6 +9,7 @@ class User {
       trainDistance: '',
       carDistance: '',
     };
+    this.emission = new Emission();
   }
 
   driveCar(distance) {
@@ -24,8 +25,11 @@ class User {
   }
 
   receiveEmissionResult() {
-    const emission = new Emission(this.dailyTravel);
-    return emission.calculateDailyTotalEmission();
+    return this.emission.calculateDailyTotalEmission(this.dailyTravel);
+  }
+
+  receiveTotalEmission() {
+    return this.emission.calculateTotalEmission(this.dailyTravel);
   }
 }
 
