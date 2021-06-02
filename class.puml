@@ -1,5 +1,45 @@
-@startuml Mobility
+@startuml CO2-footprint Class Diagram
+class User{
+    name: string
+    email: string
+    target: number
+    constructor(name,email)
+    driveCar(distance: number)
+    getonTrain(distance: number)
+    rideBike(distance: number)
+    trackEmission()
+    checkTips()
+    checkChallange()
+    acceptChallange()
+    shareChallange()
+    inviteChallange()
+    likePhoto()
+    sharePhoto()
+    sharePost()
+    likePost()
+}
 
+class Emitter {
+    calculateBikeEmission(bikeDistance: number)
+    calculateTrainEmission(trainDistance: number)
+    calculateCarEmission(carDistance: number)
+    calculateMobilityEmission(dailyTravel:{})
+
+}
+
+class Tips {}
+
+class Challanges {}
+
+class Photo {}
+
+class Post {}
+
+User  --> Emitter:track
+User --> Tips:check
+User --> Challanges: check, accept,share,invite
+User --> Photo: like,share
+User --> Post: like,share
 
 
 @endumlcs
