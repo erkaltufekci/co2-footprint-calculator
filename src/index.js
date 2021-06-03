@@ -12,8 +12,9 @@ ahmet.rideBike(80);
 
 serhat.emission.storeTotalEmission(serhat.dailyTravel);
 ahmet.emission.storeTotalEmission(ahmet.dailyTravel);
+serhat.emission.calculateTotalEmission(serhat.dailyTravel);
 
-console.log(serhat.emission.calculateTotalEmission());
+console.log(serhat.emission.calculateTotalEmission(serhat.dailyTravel));
 
 // console.log(serhat.emission.totalEmission);
 // console.log(ahmet.emission.totalEmission);
