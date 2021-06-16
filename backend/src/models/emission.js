@@ -1,15 +1,36 @@
+const mongoose = require('mongoose');
+const autopopulate = require('mongoose-autopopulate');
+
+const EmissionSchema = new mongoose.Schema({
+  totalEmission: [
+    {
+      type: Number,
+      ref: 'Emission',
+      // autopopulate: true,
+    },
+  ],
+});
 class Emission {
-  static carEmissionCoefficient = 100;
-  static trainEmissionCoefficient = 40;
-  static bikeEmissionCoefficient = 5;
-  totalEmission = [];
+  get carEmissionCoefficient() {
+    return 100;
+  }
+
+  get trainEmissionCoefficient() {
+    return 40;
+  }
+
+  get bikeEmissionCoefficient() {
+    return 5;
+  }
 
   calculateBikeEmission(bikeDistance) {
     return Emission.bikeEmissionCoefficient * bikeDistance;
   }
+
   calculateTrainEmission(trainDistance) {
     return Emission.trainEmissionCoefficient * trainDistance;
   }
+
   calculateCarEmission(carDistance) {
     return Emission.carEmissionCoefficient * carDistance;
   }
@@ -35,5 +56,7 @@ class Emission {
     this.totalEmission.push(this.calculateTotalEmission(dailyTravel));
   }
 }
+EmissionSchema.loadClass(Emission);
+EmissionSchema.plugin(autopopulate);
 
-module.exports = Emission;
+module.exports = EmissionSchema;

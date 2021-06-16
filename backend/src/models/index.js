@@ -1,4 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
+const mongoose = require('mongoose');
+const autopopulate = require('mongoose-autopopulate');
+
 const User = require('./user');
 
 const serhat = new User('Serhat', 'serhat@serhat.de');
