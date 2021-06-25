@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "printWidth": 120, // one line character number
+  "semi": false // semi colon koyma
+}
