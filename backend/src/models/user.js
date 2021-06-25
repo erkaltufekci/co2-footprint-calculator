@@ -2,6 +2,9 @@
 
 const mongoose = require('mongoose');
 const autopopulate = require('mongoose-autopopulate');
+// eslint-disable-next-line no-unused-vars
+const passportLocalMongoose = require('passport-local-mongoose');
+
 const EmissionSchema = require('./emission');
 const CarChallenge = require('./train-challenge');
 const TrainChallenge = require('./car-challenge');
@@ -11,11 +14,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-  },
+  // email: {
+  //   type: String,
+  //   unique: true,
+  //   required: true,
+  // },
   target: Number,
   sendedChallenges: [
     {
@@ -105,5 +108,8 @@ class User {
 }
 UserSchema.loadClass(User);
 UserSchema.plugin(autopopulate);
+UserSchema.plugin(passportLocalMongoose, {
+  usernameField: 'email',
+});
 
 module.exports = mongoose.model('User', UserSchema);
