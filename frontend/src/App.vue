@@ -1,11 +1,25 @@
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+  name: 'App',
+  methods: {
+    ...mapActions(['logout']),
+    async doLogout() {
+      await this.logout();
+      this.$router.push('/login');
+    },
+  },
+};
+</script>
 <template lang="pug">
-  <div id="app">
-    #app
-    h1 CO2 Footprint Calculator
+  #app
     #nav
-      <router-link to="/") Home |&nbsp:
-      <router-link to="/about") Abbout |
-    router-view
+      router-link(to="/profile") Profile | 
+      router-link(to="/login") Login | 
+      router-link(to="/register") Register | 
+      a(@click="doLogout" href="#") Logout 
+    router-view 
 </template>
 
 <style lang="scss">
