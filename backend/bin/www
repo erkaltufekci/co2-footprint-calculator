@@ -21,6 +21,18 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+app.get('io').attach(server, {
+
+  cors: {
+
+    origin: true,
+
+    credentials: true,
+
+  },
+
+})
+
 /**
  * Listen on provided port, on all network interfaces.
  */
