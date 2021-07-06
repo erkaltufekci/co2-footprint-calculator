@@ -20,11 +20,11 @@ const accountRouter = require('./routes/account');
 
 const app = express();
 
-// app.use( 
-//     cors({  
-//           origin: true,    
-//           credentials: true, 
-//           }) )
+app.use( 
+    cors({  
+          origin: true,    
+          credentials: true, 
+          }) )
 
 if (app.get('env') == 'development') {
   /* eslint-disable-next-line */

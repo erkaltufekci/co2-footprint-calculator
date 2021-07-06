@@ -4,6 +4,9 @@ import axios from 'axios'
 
 import io from 'socket.io-client'
 
+axios.defaults.baseURL = process.env.VUE_APP_BASE_URL 
+axios.defaults.withCredentials = true
+
 Vue.use(Vuex)
 
 const socket = io()
