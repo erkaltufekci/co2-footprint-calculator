@@ -4,7 +4,7 @@ services:
     image: frontend
     build:
       context: frontend
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=Host(`co2footprintcalculator.localhost`)"
@@ -18,10 +18,10 @@ services:
     image: backend
     build:
       context: backend
-      dockerfile: Dockerfile
+      dockerfile: dev.Dockerfile
     environment:
-      - MONGODB_USERNAME=erkaltufekci
-      - MONGODB_PASSWORD=SVWMWKNsRidvyHXS
+      - MONGODB_USERNAME=root
+      - MONGODB_PASSWORD=OlW5YN6jMJykEqXB
       - MONGODB_DATABASE=CO2footprint
       - MONGODB_CONNECTION_STRING=mongodb://mongo/co2-footprint-calculator
     labels:
