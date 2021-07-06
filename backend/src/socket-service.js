@@ -1,4 +1,12 @@
-const io = require('socket.io')()
+ // const io = require('socket.io')()
+
+ const io = require('socket.io')({
+  cors: {
+    origin: true,
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
+})
 
 io.on('connect', socket => {
   socket.emit('connection established')

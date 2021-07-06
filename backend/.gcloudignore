@@ -1,0 +1,9 @@
+node_modules
+.history
+.eslintre.json
+.prettierignore
+.prettierrc
+husky
+vscode
+.eslintcache
+__test__
