@@ -36,9 +36,14 @@ router.get('/init', async (req, res) => {
 });
 
 router.get('/:userId', async (req, res) => {
-  const { userId } = req.params;
-  const result = await User.find({ _id: userId });
-  res.send(result);
+  try {
+    const user = await User.findById( req.params.userId );
+    if (user) res.send(user);
+    else res.sendStatus(404)
+  } catch (error) { 
+    console.log(error)
+    res.sendStatus(500)
+  }
 });
 
 router.post('/new', async (req, res) => {

@@ -34,6 +34,7 @@ io.on('connect', socket => {
   })
 
   socket.on('go live', (userId, cb) => {
+    // eslint-disable-next-line no-console
     console.log(`${userId} is going live`)
 
     socket.broadcast.emit('new live stream', userId)
