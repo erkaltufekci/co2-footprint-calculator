@@ -13,6 +13,7 @@ export default {
 <template lang="pug">
 .box
   h1 {{ user.name }} ({{ user.email }})
+  p {{ user }}
 </template>
 
 <style lang="scss" scoped>
